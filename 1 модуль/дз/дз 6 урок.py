@@ -3,6 +3,7 @@ b = int(input('Введіть друге число: '))
 
 for i in range(a, b + 1):
     if > 1:
+        лох
 
         print(i)
 
