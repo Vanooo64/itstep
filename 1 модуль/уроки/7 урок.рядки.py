@@ -116,21 +116,21 @@
 #     print("count = {}, id_left = {}, id_right = {}".format(count,id_left,id_right))
 
 # 3 task
-# st = input('Введіть строку: ').lower() #превід в нижній регістр
-# count = st.count('a')
-# id_left = st.find('a')
-# id_right = st.rfind('a')
-#
-# if count == 0:
-#     print('Букви нема у рядку')
-# else:
-#     print("count = {}, id_left = {}, id_right = {}".format(count,id_left,id_right))
-#
-# for i in range(len(st)):
-#     if st[i] == 'a':
-#         print(i, end=' ')
-#
-# print()
+st = input('Введіть строку: ').lower() #превід в нижній регістр
+count = st.count('a')
+id_left = st.find('a')
+id_right = st.rfind('a')
+
+if count == 0:
+    print('Букви нема у рядку')
+else:
+    print("count = {}, id_left = {}, id_right = {}".format(count,id_left,id_right))
+
+for i in range(len(st)):
+    if st[i] == 'a':
+        print(i, end=' ')
+
+print()
 # # інший спосіб
 # id = -1
 # for i in range(len(st)):
