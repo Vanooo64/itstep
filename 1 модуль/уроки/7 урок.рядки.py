@@ -1,4 +1,4 @@
-st ='Python'
+# st ='Python'
 # p = st[0:6]
 # p1 = st[0:5]
 # p2 = st[:]
