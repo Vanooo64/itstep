@@ -21,7 +21,7 @@
 # print(st1.rfind('o')) #пошук першго індексу c заду наперед, якщо індексу нема видае -1
 # print(st1.count('o')) #рахуе кількість симвлів
 # print(st1.capitalize()) #робить першу букву велику
-# print(st1.title()) #робить першу букву першого слова велик
+# print(st1.title()) #робить першу букву першого слова велику
 # print(st1.upper()) #всі великі букви
 # print(st1.lower()) #всі маленькі
 # print(st1.isalpha()) #Якщо всі букви - Ture
@@ -116,21 +116,22 @@
 #     print("count = {}, id_left = {}, id_right = {}".format(count,id_left,id_right))
 
 # 3 task
-st = input('Введіть строку: ').lower() #превід в нижній регістр
-count = st.count('a')
-id_left = st.find('a')
-id_right = st.rfind('a')
+# st = input('Введіть строку: ').lower() #превід в нижній регістр
+# count = st.count('a')
+# id_left = st.find('a')
+# id_right = st.rfind('a')
+#
+# if count == 0:
+#     print('Букви нема у рядку')
+# else:
+#     print("count = {}, id_left = {}, id_right = {}".format(count,id_left,id_right))
+#
+# for i in range(len(st)):
+#     if st[i] == 'a':
+#         print(i, end=' ')
+#
+# print()
 
-if count == 0:
-    print('Букви нема у рядку')
-else:
-    print("count = {}, id_left = {}, id_right = {}".format(count,id_left,id_right))
-
-for i in range(len(st)):
-    if st[i] == 'a':
-        print(i, end=' ')
-
-print()
 # # інший спосіб
 # id = -1
 # for i in range(len(st)):
@@ -166,5 +167,3 @@ print()
 # x = 0b1100
 # print(x)
 
-a = 'hello world'
-b= a.un

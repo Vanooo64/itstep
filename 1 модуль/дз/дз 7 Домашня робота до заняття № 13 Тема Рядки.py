@@ -39,9 +39,14 @@
 # audit = str('клм') in strng_bytes1 #Перевірити чи підрядок "клм" міститься у рядку
 # print(f'Індекс входження підрядка "клм" {strng_bytes1.index("клм")}') #вивести індекс входження цього підрядка
 # up = strng_bytes1.upper() #Перевести отриманий рядок у верхній регістр.
-#
+
 # for char in range(len(up)): # пройтись циклом по кожному символу рядка та надрукувати у форматі:
 #      print(f'Номер ітерації = {char}, Символ = {up[char]}, код символу = {ord(up[char])}')
+
+# for i, char in enumerate(up):
+#     print(i, char,ord(char))
+# print()
+
 
 # 1 task
 # st = input('Введіть рядок для перевірки на паліндром: ')
@@ -63,16 +68,16 @@
 # Підрахуйте кількість знаків пунктуації у рядку.
 # Для виконання завдання можна використати модуль string
 
-import string
-text = input('Введіть рядок: ')
-hex_count = 0
-punctuation_marks = 0
-
-for char in text:
-    if char.lower() in string.hexdigits:
-        hex_count+=1
-    if char in string.punctuation:
-        punctuation_marks+=1
-
-print("Кількість шістнадцяткових цифр:", hex_count)
-print(f'Кількість знаків пунктуації: {punctuation_marks}')
+# import string
+# text = input('Введіть рядок: ')
+# hex_count = 0
+# punctuation_marks = 0
+#
+# for char in text:
+#     if char.lower() in string.hexdigits:
+#         hex_count+=1
+#     if char in string.punctuation:
+#         punctuation_marks+=1
+#
+# print("Кількість шістнадцяткових цифр:", hex_count)
+# print(f'Кількість знаків пунктуації: {punctuation_marks}')
