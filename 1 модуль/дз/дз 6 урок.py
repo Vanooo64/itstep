@@ -55,17 +55,17 @@
 #     print(output)
 
 # # 3 task
-n = int(input('Введіть кількість сходинок: '))
-n = n + 1
-
-for i in range(0, n + 1):
-     if i == 0 and i == n:
-          st = "*" + " " * (n - 1) + "*"
-          print(st)
-
-     elif i >= 1 and i <= n:
-          st1 = '*' + ' ' * i + '*' + ' ' * (n - i) + '*'
-          print(st1)
+# n = int(input('Введіть кількість сходинок: '))
+# n = n + 1
+#
+# for i in range(0, n + 1):
+#      if i == 0 and i == n:
+#           st = "*" + " " * (n - 1) + "*"
+#           print(st)
+#
+#      elif i >= 1 and i <= n:
+#           st1 = '*' + ' ' * i + '*' + ' ' * (n - i) + '*'
+#           print(st1)
 
 # # 4 task
 # n = int(input('Введіть розмір ромбу: '))
