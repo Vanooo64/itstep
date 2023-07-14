@@ -16,39 +16,69 @@
 # # 2 task
 # # Вводиться рядок тексту і рядок із деяких букв. Створіть програму для знаходження кількості цих
 # # букв у даному тексті.
+
+text = input('Введіть рядок: ')
+symbols = input('Введіть симовли: ')
+
+count = 0
+for char in text:
+    for char_s in symbols:
+        if char == char_s:
+            count+=1
+print(count)
+
+# text = 'Задається рядок. Якщо в ньому буква f зустрічається тільки один раз, виведіть її індекс.'
+# symbols = 'абк'
 #
-# st = input('Введіть рядок: ').lower()
-# symbol = input('Введіть букву або декілька: ').lower()
+# unique_symbol = ''
+# for symbol in symbols:
+#     if symbol not in unique_symbol:
+#         unique_symbol += symbol
 #
+# count = 0
+# for char_symbol in symbols:
+#     count = count + text.count(char_symbol)
+# print(count)
+
+
+
 # print(f'Символ {symbol} зустрічаеться {st.count(symbol)} разів у введеному рядку')
 
 # # 3 task
 # # У заданому рядку символів визначити кількість слів та знайти найдовше слово. Слова
 # # відділяються довільною кількістю пробілів, ком, крапок.
 #
-# st = input('Введіть рядок: ').lower().replace("  ", " ").replace(",", " ").replace(".", " ")
-# while "  " in st:
-#     st = st.replace("  ", " ")
-#     st = st.split()
+# st = 'У заданому рядку символів визначити кількість слів та знайти найдовше слов'.replace(",", "").replace(".", "")
 #
-# print(f'Кількість слів у рядку = {len(st)}')
+# lst = st.split()
+# print(len(lst))
+#
+# max_word = None
+# max_len = 0
+# for x in lst:
+#     if len(x) > max_len:
+#         max_len = len(x)
+#         max_word = x
+# print(max_word)
+
+# print(f'Кількість слів у рядку = {len(lst)}')
 # print(f'Найдовше слово у рядку - "{max(st,key = len)}", його довжина = {len(max(st,key = len))} символів')
 
-# 4 task
-# Задається рядок, який містить букви та *. Вивести слова, які містяться між зірочками.
-# Визначити мінімальну кількість "*" підряд у заданому рядку.
-# Наприклад, для рядка st = 'Hi**my****friend***Jack' максимальну кількість min_count = 2.
+# # 4 task
+# # Задається рядок, який містить букви та *. Вивести слова, які містяться між зірочками.
+# # Визначити мінімальну кількість "*" підряд у заданому рядку.
+# # Наприклад, для рядка st = 'Hi**my****friend***Jack' максимальну кількість min_count = 2.
 
-st = 'Hi**my****friend***Jack'
-for words in st:
-    st_list = st.split()
-print(st_list)
-
-st1 = st.replace("**", "*")
-while '*' in st1:
-    st1 = st1.replace("*", " ")
-    st1 = st1.replace("  ", " ")
-print(st1)
+# st = 'Hi**my****friend***Jack'
+# for words in st:
+#     st_list = st.split()
+# print(st_list)
+#
+# st1 = st.replace("**", "*")
+# while '*' in st1:
+#     st1 = st1.replace("*", " ")
+#     st1 = st1.replace("  ", " ")
+# print(st1)
 
 
 
@@ -65,7 +95,7 @@ print(st1)
 # for char in lis:
 #     if char[0].islower():
 #         lis1.append(char)
-#     if 'i' in char[:]:
+#     if 'i' and 'I' in char[:]:
 #         lis1.append(char)
 # lis1 = list(set(lis1))
 # print(lis1)
@@ -131,3 +161,12 @@ print(st1)
 #         lis1.append(j)
 #
 # print(lis1)
+
+
+# lst = list(range (3,29,5))
+# print(lst)
+
+# lst = [1, 7, 12, 3]
+# lst.append(5)
+# lst.extend([57,8]) #додати в кінець списка декілька символів
+# print(lst)

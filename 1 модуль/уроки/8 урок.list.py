@@ -131,12 +131,12 @@
 # numbers = list(range(3,1000,3))
 # print(numbers)
 
-thislist = ['apple', 'banana', 'cherry']
-thislist[1] = 'blaccurrant'
-# print(thislist)
-
-for x in thislist:
-    print(x)
+# thislist = ['apple', 'banana', 'cherry']
+# thislist[1] = 'blaccurrant'
+# # print(thislist)
+#
+# for x in thislist:
+#     print(x)
 #
 # for i in range(len(thislist)):
 #     print()
