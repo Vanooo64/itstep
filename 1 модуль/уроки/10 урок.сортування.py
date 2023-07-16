@@ -63,18 +63,18 @@
 #     print(i, arrey)
 # print(arrey)
 
-arrey = [4, 3, 2, 10, 12, 1, 5, 6]
-def inseert_sort(array):
-    n = len(arrey)
-
-    for i in range(n):
-        element = arrey[i]
-        j = i
-        while (j > 0 and arrey[j - 1] > element):
-            arrey[j] = arrey[j - 1]
-            j = j - 1
-        arrey[j] = element
-    return arrey
-
-inseert_sort(array)
-print(arrey)
+# arrey = [4, 3, 2, 10, 12, 1, 5, 6]
+# def inseert_sort(array):
+#     n = len(arrey)
+#
+#     for i in range(n):
+#         element = arrey[i]
+#         j = i
+#         while (j > 0 and arrey[j - 1] > element):
+#             arrey[j] = arrey[j - 1]
+#             j = j - 1
+#         arrey[j] = element
+#     return arrey
+#
+# inseert_sort(array)
+# print(arrey)
