@@ -69,16 +69,63 @@
 # Удосконалення полягає в тому, щоб аналізувати кількість перестановок на кожному кроці.
 # Якщо ця кількість дорівнює нулю, то продовжувати сортування немає сенсу — список відсортовано.
 
-lst = [1961, 1960, 1925, 1938, 1997, 1968, 2003, 1928, 1934]
-count = 0
-for run in range(len(lst) - 1):
-    count = 0
-    for i in range(len(lst) - 1 - run):
-        if lst[i] < lst[i + 1]:
-            lst[i + 1], lst[i] = lst[i], lst[i + 1]
-            count+=1
+# lst = [1961, 1960, 1925, 1938, 1997, 1968, 2003, 1928, 1934]
+# count = 0
+# for run in range(len(lst) - 1):
+#     count = 0
+#     for i in range(len(lst) - 1 - run):
+#         if lst[i] < lst[i + 1]:
+#             lst[i + 1], lst[i] = lst[i], lst[i + 1]
+#             count+=1
+#
+#     if count==0:
+#         break
+#
+# print(lst)
 
-    if count==0:
-        break
+# task 1
+from random import randint, seed
 
-print(lst)
+seed = (6)
+
+lst = [randint(1, 100) for i in range(20)]
+print(f'Початкойвий список: {lst}')
+print()
+# Cортування вибором (selection sort)
+
+selection_sort_comparisons = 0
+selection_sort_swaps = 0
+for num in range(len(lst)):
+    min_value = num
+
+    for i in range(num, len(lst)):
+        selection_sort_comparisons += 1
+        if lst[min_value] < lst[i]:
+            min_value = i
+            selection_sort_swaps += 1
+
+    lst[num], lst[min_value] = lst[min_value], lst[num]
+
+print(f'''Відсортованний список методом (selection sort) 
+{lst}''')
+print(f'Кількість порівнянь С = {selection_sort_comparisons} та перестановок E елементів = {selection_sort_swaps}')
+print()
+# Сортування вставкою  (Insertion sort)
+
+insertion_sort_comparisons = 0
+insertion_sort_swaps = 0
+
+n = len(lst)
+for i in range(1, n):
+    for j in range(i, 0, -1):
+        insertion_sort_comparisons += 1
+        if lst[j] > lst[j - 1]:
+            lst[j], lst[j - 1] = lst[j - 1], lst[j]
+            insertion_sort_swaps += 1
+
+        else:
+            break
+
+print(f'''Відсортованний список методом (Insertion sort) 
+{lst}''')
+print(f'Кількість порівнянь С = {insertion_sort_comparisons} та перестановок E елементів = {insertion_sort_swaps}')
