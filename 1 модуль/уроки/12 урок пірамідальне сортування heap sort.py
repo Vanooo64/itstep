@@ -1,5 +1,5 @@
 #                       heap sort пірамідальне сортування
-
+#
 # def heapify(arr, size_heap, root):  # size_heap -  довжина масиву, root - індекс батькіского елемента
 #     # build max_heap будуе максимальну піраміду
 #     largest = root #найбільший індекс корень
