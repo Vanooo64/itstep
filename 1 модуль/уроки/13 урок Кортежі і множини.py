@@ -159,18 +159,20 @@
 
 a = {3, 1, 7, 4}
 b = {2, 8, 3, 1}
-c = a | b  # {1, 2, 3, 4, 7, 8}
-print(c)
+# c = a | b  # {1, 2, 3, 4, 7, 8}
+# print(c)
 
 v = a&b #{1, 3}
 print(v)
+print(a.intersection(b))
+a.intersection_update(b)
 
-c = b-a
-d = a-b
-print(c) #{8, 2}
-print(d) #{4, 7}
-
-l = b ^ a
-m = a^b
-print(l) #{2, 4, 7, 8}
-print(m) # {2, 4, 7, 8}
+# c = b-a
+# d = a-b
+# print(c) #{8, 2}
+# print(d) #{4, 7}
+#
+# l = b ^ a
+# m = a^b
+# print(l) #{2, 4, 7, 8}
+# print(m) # {2, 4, 7, 8}
