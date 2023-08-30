@@ -8,7 +8,7 @@
 # # Якщо передані списки різної довжини, відсутні елементи необхідно вважати рівними нулю.
 
 # from typing import List, Iterable
-# def sum_lst(lst1: List[int], lst2: List[int]) -> Iterable[int]:
+# def sum_lst(lst1: List[int], Lst2: list[int]) -> Iterable[int]:
 #     """
 #     Функція повертае суму єлементві двох списків, якщо передані списки різної довжини, відсутні елементи вважаються рівними нулю.
 #
@@ -74,11 +74,18 @@
 # 2.Створити часткову функцію з log, у якої «date» та «impotent» — попередньо задані поточні аргументи. Протестуйте виконання.
 # 3.Виконати каррування функції log. Протестуйте виконання.
 
-def log(date, message, important):
-    def
-    pass
+def log(date: str, message: str, important: bool):
+    print(f'{date}|{message:^20s}|{important}')
+log('28.08.2023', 'Hello world', True)
 
+def tame(date: str, important: bool):
+    def mess(message: str):
+        print(f'{date}|{message:^20s}|{important}')
+    return mess
 
+teams = tame('28.08.2023', True)
+teams('Python')
+teams('CSS')
 
 
 
