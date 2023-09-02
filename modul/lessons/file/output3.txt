@@ -1,0 +1,14 @@
+1:Python
+2:Ruby
+3:C++
+4:C
+5:Java
+6:Go
+7:JavaScript
+1:Python
+2:Ruby
+3:C++
+4:C
+5:Java
+6:Go
+7:JavaScript
