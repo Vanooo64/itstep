@@ -42,11 +42,11 @@
 # read = filу.read()
 # print(read)
 #
-# # Зчитування файлу а допомогою менеджера with
+# Зчитування файлу а допомогою менеджера with
 # with open('output.txt', mode='r') as file:
 #     read = file.read()
 #     print(read)
-#
+
 # # # Зчитування файлу за допомогою менеджера with (зчитае перші 5 символів, нумерація починаеться з 0)
 # with open('output.txt', mode='r') as file:
 #     read = file.read(5)
