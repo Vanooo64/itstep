@@ -91,7 +91,7 @@
 #     print("JSON і бінарний файл містять один і той же об'єкт (за допомогою is).")
 # else:
 #     print("JSON і бінарний файл містять різні об'єкти (за допомогою is).")
-
+#
 # # Завдання 2.
 # # Реалізуйте функцію validate_json, яка спробує перевірити, чи є рядок у форматі JSON коректним.
 # # Якщо рядок має правильний формат JSON, то виводиться повідомлення "Valid JSON". Якщо ж дані не
@@ -110,4 +110,29 @@
 #
 # validate_json(valid_json_str)  # Результат: Valid JSON
 # validate_json(invalid_json_str)  # Результат: Invalid JSON: Expecting property name enclosed in double quotes: line 1 column 34 (char 33)
-
+#
+# # Завдання 3.
+# # Задайте вручну табличні дані у деякий файл формату csv. Напишіть функцію convert_csv_to_json, яка
+# # приймає назву csv-файла, і з нього програмно створює відповідний json-файл наступного вигляду і повертає
+# # повідомлення про успішність чи неуспішність операції.
+# import csv, json
+#
+# def convert_csv_to_json(name_file_csv):
+#     try:
+#         with open(name_file_csv, mode="r", encoding="utf-8") as csv_file:
+#             data = csv.DictReader(csv_file)
+#             data_dict = {int(data['No']): {'Company': data['Company'], 'Car Model': data['Car Model']} for data in data}
+#
+#
+#             with open('new_json.json', mode='w', encoding='utf-8') as json_file:
+#                 json.dump(data_dict, json_file, indent=4)
+#                 return f'Данні з файлу "{csv_file.name}" були записані у json-файл під назвою "{json_file.name}"'
+#     except Exception as e:
+#         return f"Помилка: {str(e)}"
+#
+# res = convert_csv_to_json('data.csv')
+# print(res)
+#
+#
+#
+#
