@@ -131,7 +131,9 @@
 # # · Можливість зміни облікових даних користувача, таких як зміна паролю, електронної пошти.
 # # · Видалення свого облікового запису.
 #
+
 import csv
+import os
 
 print('             Вас вітає система реєстрації та аутентифікації користувачів')
 print()
@@ -151,130 +153,125 @@ def checking_email(email, path): #функція для перевірки пр�
                 return False
     return True
 
-# def add_user(path, name, email, password): # функція додає нового користувача
-#     add_data = [name, email, password]
-#
-#     with open(path, mode='a', newline='') as file:
-#         writer = csv.writer(file)
-#         writer.writerow(add_data)
-#
-# if choice == 1:
-#     email = input('Введіть email: ')
-#     while not checking_email(email, 'authentication_data.csv'):
-#         print('Користувач вже зарєстрованний, введіть унікальний email')
-#         email = input('Введіть email: ')
-#
-#     name = input('Введіть імя користувача латинськими буквами: ')
-#     password = input('Введіть пароль: ')
-#
-#     add_user("authentication_data.csv", name, email, password)
-#     print('Користувача було зарєстрованно у системі')
+def add_user(path, name, email, password): # функція додає нового користувача
+    add_data = [name, email, password]
+
+    with open(path, mode='a', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(add_data)
+
+if choice == 1:
+    email = input('Введіть email: ')
+    while not checking_email(email, 'authentication_data.csv'):
+        print('Користувач вже зарєстрованний, введіть унікальний email')
+        email = input('Введіть email: ')
+
+    name = input('Введіть імя користувача латинськими буквами: ')
+    password = input('Введіть пароль: ')
+
+    add_user("authentication_data.csv", name, email, password)
+    print('Користувача було зарєстрованно у системі')
 
 
-# # Аутентифікація (вхід) користувача з перевіркою введених облікових даних (електронна
-# # пошта та пароль). Якщо введені користувачем почта і пароль є у файлі і співпадають, то вхід успішний.
-#
-# def authentication(path, email, password): #функція для перевірки присутності email у csv файлі
-#     with open(path, mode='r') as file:
-#         reader = csv.DictReader(file)
-#         list_data = list(reader)
-#
-#         for row in list_data:
-#             if row["Email"] == email and row["Password"] == password:
-#                 return True
-#         return False
-#
-# if choice == 2:
-#     email = input('Введіть email: ')
-#     password = input('Введіть пароль: ')
-#
-#     if authentication("authentication_data.csv", email, password):
-#         print('Ви успішно автеризувались у системі')
-#     else:
-#         print('Електронна пошта або пароль не некоректні!')
+# Аутентифікація (вхід) користувача з перевіркою введених облікових даних (електронна
+# пошта та пароль). Якщо введені користувачем почта і пароль є у файлі і співпадають, то вхід успішний.
 
-# # Можливість зміни облікових даних користувача, таких як зміна паролю, електронної пошти.
-#
-# def modify_user_data(path, old_email, new_email, new_password):
-#     modified = False
-#     new_data = []
-#     with open(path, mode='r', newline='') as file:
-#         reader = csv.DictReader(file)
-#         fieldnames = reader.fieldnames
-#         for row in reader:
-#             # Перевірте, чи збігається електронна адреса
-#             if row['Email'] == old_email:
-#                 row['Email'] = new_email
-#                 row['Password'] = new_password
-#                 modified = True
-#             new_data.append(row)
-#     # Якщо дані були змінені, файл  перезаписуется
-#     if modified:
-#         with open(path, mode='w', newline='') as file:
-#             writer = csv.DictWriter(file, fieldnames=fieldnames)
-#             writer.writeheader()
-#             writer.writerows(new_data)
-#         return True
-#     else:
-#         return False
-#
-# if choice == 3:
-#     old_email = input('Введіть email для якого хочете змынити пароль: ')
-#     new_email = input('Введіть новий email: ')
-#     new_password = input('Введіть новий пароль: ')
-#
-#
-#     if modify_user_data("authentication_data.csv", old_email, new_email, new_password):
-#         print("Дані користувача успішно змінено.")
-#     else:
-#         print("Користувача з цією електронною адресою не знайдено, або дані неправильні.")
+def authentication(path, email, password): #функція для перевірки присутності email у csv файлі
+    with open(path, mode='r') as file:
+        reader = csv.DictReader(file)
+        list_data = list(reader)
+
+        for row in list_data:
+            if row["Email"] == email and row["Password"] == password:
+                return True
+        return False
+
+if choice == 2:
+    email = input('Введіть email: ')
+    password = input('Введіть пароль: ')
+
+    if authentication("authentication_data.csv", email, password):
+        print('Ви успішно автеризувались у системі')
+    else:
+        print('Електронна пошта або пароль не некоректні!')
+
+# Можливість зміни облікових даних користувача, таких як зміна паролю, електронної пошти.
+
+def modify_user_data(path, old_email, new_email, new_password):
+    modified = False
+    new_data = []
+    with open(path, mode='r', newline='') as file:
+        reader = csv.DictReader(file)
+        fieldnames = reader.fieldnames
+        for row in reader:
+            # Перевірте, чи збігається електронна адреса
+            if row['Email'] == old_email:
+                row['Email'] = new_email
+                row['Password'] = new_password
+                modified = True
+            new_data.append(row)
+    # Якщо дані були змінені, файл  перезаписуется
+    if modified:
+        with open(path, mode='w', newline='') as file:
+            writer = csv.DictWriter(file, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerows(new_data)
+        return True
+    else:
+        return False
+
+if choice == 3:
+    old_email = input('Введіть email для якого хочете змынити пароль: ')
+    new_email = input('Введіть новий email: ')
+    new_password = input('Введіть новий пароль: ')
+
+
+    if modify_user_data("authentication_data.csv", old_email, new_email, new_password):
+        print("Дані користувача успішно змінено.")
+    else:
+        print("Користувача з цією електронною адресою не знайдено, або дані неправильні.")
 
 # Видалення свого облікового запису.
 
+def delet_user(path, email): # функція додає нового користувача
+    add_data = [name, email]
 
-# def delet_user(path, email): # функція додає нового користувача
-#     add_data = [name, email]
-#
-#     with open(path, mode='a', newline='') as file:
-#         writer = csv.writer(file)
-#         writer.writerow(add_data)
-#
-# if choice == 4:
-#
-# email = input('Введіть email: ')
-#     while not checking_email(email, 'authentication_data.csv'):
-#         print('Користувач вже зарєстрованний, введіть унікальний email')
-#         email = input('Введіть email: ')
-#
-#     name = input('Введіть імя користувача латинськими буквами: ')
-#     password = input('Введіть пароль: ')
-#
-#     add_user("authentication_data.csv", name, email, password)
-#     print('Користувача було зарєстрованно у системі')
+    with open(path, mode='a', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(add_data)
 
+if choice == 4:
+    def delete_user(path, email):
+        # Перевіряємо, чи існує файл з вказаним шляхом
+        if not os.path.exists(path):
+            print("Файл не знайдено.")
+            return
 
+        # Створюємо тимчасовий файл для збереження оновлених даних
+        temp_file = "temp.csv"
+        try:
+            # Відкриваємо вихідний CSV-файл для читання та створюємо тимчасовий CSV-файл для запису
+            with open(path, mode='r', newline='') as file_read, open(temp_file, mode='w', newline='') as temp_write:
+                reader = csv.DictReader(file_read)
+                fieldnames = reader.fieldnames
 
+                # Записуємо дані в тимчасовий файл, крім видаленого запису
+                writer = csv.DictWriter(temp_write, fieldnames=fieldnames)
+                writer.writeheader()
+                for row in reader:
+                    if row['Email'] != email:
+                        writer.writerow(row)
 
+            # Переміщуємо тимчасовий файл на місце вихідного файлу
+            os.replace(temp_file, path)
+            print("Користувача успішно видалено.")
+        except Exception as e:
+            print("Помилка під час видалення користувача:", str(e))
+            # Видаляємо тимчасовий файл у разі помилки
+            os.remove(temp_file)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    # Викликаємо функцію для видалення користувача за його електронною поштою
+    if choice == 4:
+        email_to_delete = input("Введіть email для видалення користувача: ")
+        delete_user("authentication_data.csv", email_to_delete)
 
